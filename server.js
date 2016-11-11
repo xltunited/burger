@@ -4,7 +4,7 @@ var methodOverride = require('method-override');
 var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
-// app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + '/public'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
@@ -25,10 +25,10 @@ app.use('/', function(req,res){
 
 })
 
-var routes = require('./controllers/burgers_controller.js');
+// var routes = require('./controllers/burgers_controller.js');
 
 
-app.use('/', routes);
+// app.use('/', routes);
 
 var port = 3000;
 app.listen(port, function () {
